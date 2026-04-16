@@ -1,0 +1,298 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=DM+Sans:wght@300;400;500&display=swap');
+
+:root {
+    --bg: #FAF9F6;
+    --surface: #FFFFFF;
+    --border: #E8E4DF;
+    --text: #1A1A1A;
+    --text-muted: #8A8278;
+    --accent: #B8966A;
+    --accent-light: #F5EFE6;
+    --danger: #C0392B;
+    --radius: 4px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    font-size: 14px;
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* ── MENU ── */
+.menu {
+    background: var(--text);
+    padding: 0 40px;
+    display: flex;
+    align-items: center;
+    gap: 0;
+    height: 64px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    height: 70px;
+    margin-right: 32px;
+    opacity: 0.95;
+    filter: brightness(0) invert(1);
+}
+
+.menu a {
+    color: rgba(255,255,255,0.6);
+    text-decoration: none;
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-weight: 500;
+    padding: 0 16px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    border-bottom: 2px solid transparent;
+    transition: color 0.2s, border-color 0.2s;
+}
+
+.menu a:hover {
+    color: white;
+    border-bottom-color: var(--accent);
+}
+
+/* ── CONTAINER ── */
+.container {
+    max-width: 1080px;
+    margin: 48px auto;
+    padding: 0 32px 64px;
+}
+
+/* ── HEADINGS ── */
+h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 42px;
+    font-weight: 300;
+    letter-spacing: 0.02em;
+    line-height: 1.2;
+    margin-bottom: 6px;
+}
+
+h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    margin-bottom: 28px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--border);
+    color: var(--text);
+}
+
+.page-subtitle {
+    color: var(--text-muted);
+    font-size: 13px;
+    margin-bottom: 40px;
+    letter-spacing: 0.04em;
+}
+
+/* ── FORMS ── */
+form {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 28px;
+    border-radius: var(--radius);
+    margin-bottom: 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 14px;
+    align-items: end;
+}
+
+form label {
+    display: block;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 6px;
+    font-weight: 500;
+}
+
+input, select {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    appearance: none;
+}
+
+input:focus, select:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(184,150,106,0.12);
+    background: white;
+}
+
+input::placeholder { color: var(--text-muted); }
+
+/* ── BUTTONS ── */
+button, .btn-primary {
+    background: var(--text);
+    color: white;
+    border: none;
+    padding: 11px 24px;
+    border-radius: var(--radius);
+    cursor: pointer;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-weight: 500;
+    transition: background 0.2s, transform 0.1s;
+    white-space: nowrap;
+}
+
+button:hover { background: #333; transform: translateY(-1px); }
+button:active { transform: translateY(0); }
+
+/* ── TABLES ── */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+}
+
+thead tr { background: var(--text); }
+
+th {
+    padding: 14px 18px;
+    text-align: left;
+    color: rgba(255,255,255,0.75);
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+td {
+    padding: 14px 18px;
+    border-bottom: 1px solid var(--border);
+    color: var(--text);
+    font-size: 13px;
+}
+
+tr:last-child td { border-bottom: none; }
+
+tbody tr:hover td { background: var(--accent-light); }
+
+/* ── ACTION BUTTONS ── */
+a.btn {
+    display: inline-block;
+    padding: 5px 12px;
+    border-radius: 2px;
+    text-decoration: none;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-weight: 500;
+    transition: opacity 0.2s, transform 0.1s;
+}
+
+a.btn:hover { opacity: 0.8; transform: translateY(-1px); }
+
+.btn-editar {
+    background: var(--accent-light);
+    color: var(--accent);
+    border: 1px solid rgba(184,150,106,0.3);
+}
+
+.btn-eliminar {
+    background: #FDF0EF;
+    color: var(--danger);
+    border: 1px solid rgba(192,57,43,0.2);
+}
+
+/* ── DASHBOARD CARDS ── */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-bottom: 48px;
+}
+
+.stat-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 28px;
+    border-radius: var(--radius);
+    transition: box-shadow 0.2s;
+}
+
+.stat-card:hover {
+    box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+}
+
+.stat-card .stat-label {
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.stat-card .stat-value {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 36px;
+    font-weight: 300;
+    color: var(--text);
+    line-height: 1;
+}
+
+.stat-card .stat-icon {
+    font-size: 22px;
+    margin-bottom: 14px;
+    opacity: 0.5;
+}
+
+/* ── EDIT FORM PAGE ── */
+.form-page {
+    max-width: 560px;
+}
+
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    color: var(--text-muted);
+    text-decoration: none;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 32px;
+    transition: color 0.2s;
+}
+
+.back-link:hover { color: var(--text); }
+
+.form-page form {
+    grid-template-columns: 1fr;
+}
+
+/* ── DIVIDER ── */
+.section-divider {
+    height: 1px;
+    background: var(--border);
+    margin: 40px 0;
+}
